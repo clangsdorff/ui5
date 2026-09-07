@@ -1,0 +1,24 @@
+# Build outputs
+dist/
+*_patched.apk
+*_patched.jar
+
+# Decode / patch-authoring work dirs
+unpacked/
+
+# apktool tooling
+apktool_frameworks/
+
+# Platform signing keys (downloaded at build time)
+platform.pk8
+platform.x509.pem
+
+# Ignore apks folder
+apks/*
+
+# macOS
+.DS_Store
+
+# Build log
+build.log
+apks/

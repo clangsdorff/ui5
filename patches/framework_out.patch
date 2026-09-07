@@ -1,0 +1,37 @@
+diff --git a/smali_classes6/com/samsung/android/feature/SemCscFeature.smali b/smali_classes6/com/samsung/android/feature/SemCscFeature.smali
+index 2e787dd1..599baca0 100644
+--- a/smali_classes6/com/samsung/android/feature/SemCscFeature.smali
++++ b/smali_classes6/com/samsung/android/feature/SemCscFeature.smali
+@@ -917,6 +917,19 @@
+ .method private declared-synchronized blacklist get(Ljava/lang/String;)Ljava/lang/String;
+     .locals 2
+ 
++    const-string v0, "CscFeature_VoiceCall_ConfigRecording"
++
++    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v0
++
++    if-eqz v0, :cond_uipatch_csc_0
++
++    const-string v0, "RecordingAllowed"
++
++    return-object v0
++
++    :cond_uipatch_csc_0
+     monitor-enter p0
+ 
+     :try_start_0
+diff --git a/smali_classes6/com/samsung/android/rune/CoreRune.smali b/smali_classes6/com/samsung/android/rune/CoreRune.smali
+index b46b2784..f0f51bb0 100644
+--- a/smali_classes6/com/samsung/android/rune/CoreRune.smali
++++ b/smali_classes6/com/samsung/android/rune/CoreRune.smali
+@@ -3373,6 +3373,8 @@
+ 
+     move-result v1
+ 
++    const/4 v1, 0x1
++
+     sput-boolean v1, Lcom/samsung/android/rune/CoreRune;->FW_SUPPORT_APPLOCK:Z
+ 
+     sget-boolean v1, Lcom/samsung/android/rune/CoreRune;->FW_SUPPORT_APPLOCK:Z

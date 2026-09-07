@@ -1,0 +1,5 @@
+*.apk binary
+*.jar binary
+*.apk* binary
+*.part_aa binary
+*.part_ab binary

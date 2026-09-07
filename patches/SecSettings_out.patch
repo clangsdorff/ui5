@@ -1,0 +1,33 @@
+diff --git a/smali_classes3/com/samsung/android/settings/usefulfeature/applock/AppLockPreferenceController.smali b/smali_classes3/com/samsung/android/settings/usefulfeature/applock/AppLockPreferenceController.smali
+index 6823ab96..2da013d3 100644
+--- a/smali_classes3/com/samsung/android/settings/usefulfeature/applock/AppLockPreferenceController.smali
++++ b/smali_classes3/com/samsung/android/settings/usefulfeature/applock/AppLockPreferenceController.smali
+@@ -123,9 +123,6 @@
+ 
+     sget-object p0, Lcom/android/settings/Utils;->sBuilder:Ljava/lang/StringBuilder;
+ 
+-    sget-boolean p0, Lcom/samsung/android/settings/Rune;->SUPPORT_SMARTMANAGER_CN:Z
+-
+-    if-eqz p0, :cond_0
+ 
+     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+ 
+diff --git a/smali_classes4/com/samsung/android/settings/display/controller/SecOutDoorModePreferenceController.smali b/smali_classes4/com/samsung/android/settings/display/controller/SecOutDoorModePreferenceController.smali
+index 2f8b3cfc..bddbf785 100644
+--- a/smali_classes4/com/samsung/android/settings/display/controller/SecOutDoorModePreferenceController.smali
++++ b/smali_classes4/com/samsung/android/settings/display/controller/SecOutDoorModePreferenceController.smali
+@@ -61,13 +61,7 @@
+ .method public final isAvailable()Z
+     .locals 0
+ 
+-    iget-object p0, p0, Lcom/android/settingslib/core/AbstractPreferenceController;->mContext:Landroid/content/Context;
+-
+-    invoke-static {p0}, Lcom/samsung/android/settings/Rune;->supportAutoBrightness(Landroid/content/Context;)Z
+-
+-    move-result p0
+-
+-    xor-int/lit8 p0, p0, 0x1
++    const/4 p0, 0x1
+ 
+     return p0
+ .end method
